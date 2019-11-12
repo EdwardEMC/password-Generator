@@ -14,7 +14,7 @@ function copytext() {
     alert("Password copied to clipboard")
 }
 
-//Erase any previously created passwords
+//Erase any previously created passwords/text in the textarea
 function eraseText() {
     document.getElementById("password").value="";
 }
@@ -36,23 +36,28 @@ function passwordGenerator() {
 
         var sC = prompt("Please input a special character(s):");
         //Check whether the input is all special characters, if not it will continue to ask the user for a special character selection
-        for(i=0; i<sC.length; i++){
-            if (sC[i].match(/[^a-zA-Z0-9 ]+/g)) {
-                var valid = true;
-            }
-            else {
-                var valid = false;
-            }
-            
-            while (!valid) {
+        if (sC===null){
+            return;
+        }
+        else {
+            for(i=0; i<sC.length; i++){
                 if (sC[i].match(/[^a-zA-Z0-9 ]+/g)) {
                     var valid = true;
                 }
                 else {
-                    alert("Invalid character(s)")
-                    var sC = prompt("Please input a special character(s):");
-                    i=0; //Resets the for loop incase the second input has less characters and hence affects the .length
-                }  
+                    var valid = false;
+                }
+                
+                while (!valid) {
+                    if (sC[i].match(/[^a-zA-Z0-9 ]+/g)) {
+                        var valid = true;
+                    }
+                    else {
+                        alert("Invalid character(s)")
+                        var sC = prompt("Please input a special character(s):");
+                        i=0; //Resets the for loop incase the second input has less characters and hence affects the .length
+                    }  
+                }
             }
         }
 
@@ -62,23 +67,28 @@ function passwordGenerator() {
 
         var nC = prompt("Please input a numerical character(s):");
         //Check whether the input is all numbers, if not it will continue to ask the user for a number selection
-        for(i=0; i<nC.length; i++){
-            if (nC[i].match(/[0-9]/g)) {
-                var valid = true;
-            }
-            else {
-                var valid = false;
-            }
-            
-            while (!valid) {
+        if (sC===null){
+            return;
+        }
+        else{
+            for(i=0; i<nC.length; i++){
                 if (nC[i].match(/[0-9]/g)) {
                     var valid = true;
                 }
                 else {
-                    alert("Invalid character(s)")
-                    var nC = prompt("Please input a numerical character(s):");
-                    i=0;
-                }  
+                    var valid = false;
+                }
+                
+                while (!valid) {
+                    if (nC[i].match(/[0-9]/g)) {
+                        var valid = true;
+                    }
+                    else {
+                        alert("Invalid character(s)")
+                        var nC = prompt("Please input a numerical character(s):");
+                        i=0;
+                    }  
+                }
             }
         }
 
@@ -87,23 +97,28 @@ function passwordGenerator() {
 
         var lC = prompt("Please input a lowercase character(s):");
         //Check whether the input is all lowercase, if not it will continue to ask the user for an lowercase selection
-        for(i=0; i<lC.length; i++){
-            if (lC[i].match(/[a-z]/g)) {
-                var valid = true;
-            }
-            else {
-                var valid = false;
-            }
-          
-            while (!valid) {
+        if (sC===null){
+            return;
+        }
+        else {
+            for(i=0; i<lC.length; i++){
                 if (lC[i].match(/[a-z]/g)) {
                     var valid = true;
                 }
                 else {
-                    alert("Invalid character(s)")
-                    var lC = prompt("Please input an lowercase character(s):");
-                    i=0;
-                }  
+                    var valid = false;
+                }
+            
+                while (!valid) {
+                    if (lC[i].match(/[a-z]/g)) {
+                        var valid = true;
+                    }
+                    else {
+                        alert("Invalid character(s)")
+                        var lC = prompt("Please input an lowercase character(s):");
+                        i=0;
+                    }  
+                }
             }
         }
 
@@ -112,24 +127,29 @@ function passwordGenerator() {
         
         var uC = prompt("Please input an uppercase character(s):");
         //Check whether the input is all uppercase, if not it will continue to ask the user for an uppercase selection
-        for(i=0; i<uC.length; i++){
-                if (uC[i].match(/[A-Z]/g)) {
-                    var valid = true;
-                }
-                else {
-                    var valid = false;
-                }
-              
-                while (!valid) {
+        if (sC===null){
+            return;
+        }
+        else {
+            for(i=0; i<uC.length; i++){
                     if (uC[i].match(/[A-Z]/g)) {
                         var valid = true;
                     }
                     else {
-                        alert("Invalid character(s)")
-                        var uC = prompt("Please input an uppercase character(s):");
-                        i=0;
-                    }  
-                }
+                        var valid = false;
+                    }
+                
+                    while (!valid) {
+                        if (uC[i].match(/[A-Z]/g)) {
+                            var valid = true;
+                        }
+                        else {
+                            alert("Invalid character(s)")
+                            var uC = prompt("Please input an uppercase character(s):");
+                            i=0;
+                        }  
+                    }
+            }
         }
 
         var uC = (uC.match(/.{1}/g));   

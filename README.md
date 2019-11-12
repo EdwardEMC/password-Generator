@@ -4,8 +4,6 @@ The password will conform to the following values:
 
 * Length between 8 and 128 characters
 
-* Character type:
-
 * Special characters
 
 * Numeric characters
@@ -21,7 +19,8 @@ LINK FOR GITHUB PAGES TO COME
 ![password generator demo](/assets/images/passwordGenerator.png?raw=true "passwordGenerator") 
 
 # Built With
-Bootstrap
+Bootstrap\
+
 Durstenfeld shuffle algorithm
 
 # Authors
@@ -30,6 +29,6 @@ Edward Coad
 
 # Acknowledgments
 
-Durstenfeld shuffle algorithm
-bootstrap.com
-w3school.com
+Durstenfeld shuffle algorithm\
+bootstrap.com\
+w3school.com\

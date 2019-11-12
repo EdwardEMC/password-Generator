@@ -19,7 +19,7 @@ LINK FOR GITHUB PAGES TO COME
 ![password generator demo](/assets/images/passwordGenerator.png?raw=true "passwordGenerator") 
 
 # Built With
-Bootstrap\
+Bootstrap
 
 Durstenfeld shuffle algorithm
 
@@ -31,4 +31,4 @@ Edward Coad
 
 Durstenfeld shuffle algorithm\
 bootstrap.com\
-w3school.com\
+w3school.com

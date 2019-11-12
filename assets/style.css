@@ -18,4 +18,6 @@ textarea {
 
 .container {
     margin-top: 30px;
+    padding: 10px;
+    border: 1px solid black;
 }

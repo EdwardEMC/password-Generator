@@ -14,6 +14,11 @@ function copytext() {
     alert("Password copied to clipboard")
 }
 
+//Erase any previously created passwords
+function eraseText() {
+    document.getElementById("password").value="";
+}
+
 function passwordGenerator() {
     //Create blank array for inputs to be pushed to
     //Prompt user for input
@@ -45,13 +50,13 @@ function passwordGenerator() {
                 }
                 else {
                     alert("Invalid character(s)")
-                    var sC = prompt("Please input an uppercase character(s):");
+                    var sC = prompt("Please input a special character(s):");
                     i=0; //Resets the for loop incase the second input has less characters and hence affects the .length
                 }  
             }
         }
 
-        //Takes the input string and transforms it into individual character array entries
+        //Takes the input string and transforms it into individual character array entries instead of a single entry block string
         var sC = (sC.match(/.{1}/g));
         console.log(sC);
 
@@ -71,7 +76,7 @@ function passwordGenerator() {
                 }
                 else {
                     alert("Invalid character(s)")
-                    var nC = prompt("Please input an uppercase character(s):");
+                    var nC = prompt("Please input a numerical character(s):");
                     i=0;
                 }  
             }
@@ -96,7 +101,7 @@ function passwordGenerator() {
                 }
                 else {
                     alert("Invalid character(s)")
-                    var lC = prompt("Please input an uppercase character(s):");
+                    var lC = prompt("Please input an lowercase character(s):");
                     i=0;
                 }  
             }
@@ -133,6 +138,12 @@ function passwordGenerator() {
         //Merges all the user input arrays into a single array with each entry only being a single character
         var passwordArray = passwordArray.concat(sC, nC, lC, uC); 
         console.log(passwordArray);
+
+        //Resets the passwordArray if there are more than 128 characters and makes the user start again
+        if (passwordArray.length>128){
+            passwordArray=[];
+            alert("Too many characters, please try again.");
+        }
     }
 
     //Uses the shuffleArray to create a truely random password
@@ -153,32 +164,5 @@ function shuffleArray(array) {
         var temp = array[i];
         array[i] = array[j];
         array[j] = temp;
-    }
-}
-
-//Validation functions
-//Check input value of prompt against set conditions
-//If false, prompt the user to input again
-//If true, move onto next prompt
-function uCPrompt() {
-    
-    for(i=0; i<uC.length; i++){
-        if (uC[i].match(/[A-Z]/g)) {
-            var valid = true;
-        }
-        else {
-            var valid = false;
-        }
-      
-        while (!valid) {
-            if (uC[i].match(/[A-Z]/g)) {
-                var valid = true;
-            }
-            else {
-                alert("Invalid character(s)")
-                var uC = prompt("Please input an uppercase character(s):");
-                i=0;
-            }  
-        }
     }
 }

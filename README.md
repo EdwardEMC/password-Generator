@@ -12,7 +12,7 @@ The password will conform to the following values:
 
 * Uppercase characters
 
-Once all prompts are answered, the user will be presented with a password matching the answered prompts. Displaying the generated password in the textarea. The copy button will copy the password to the clipboard and the clear button will clear the textarea ready for a new password to be generated.
+Once the password length is confirmed the user will be asked to confirm which character types they would like included, the user will then be presented with a password matching the selected criteria. Displaying the generated password in the textarea. The copy button will copy the password to the clipboard and the clear button will clear the textarea ready for a new password to be generated.
 
 LINK FOR GITHUB PAGES TO COME
 
@@ -21,14 +21,12 @@ LINK FOR GITHUB PAGES TO COME
 # Built With
 Bootstrap
 
-Durstenfeld shuffle algorithm
-
 # Authors
 
 Edward Coad
 
 # Acknowledgments
 
-Durstenfeld shuffle algorithm\
 bootstrap.com\
+stackoverflow.com\
 w3school.com
